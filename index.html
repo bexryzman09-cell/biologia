@@ -1,255 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="shortcut icon" href="./imgs/logo.jpg" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gravitas+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
-                rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unione School Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
 </head>
-   
-
-
 <body>
-        <main>
-                <section>
-                        <div class="container">
-                                <h1 class="survey__title">Добро пожаловать на Опрос <br> <span
-                                                class="survey__title--span">Unione
-                                                School</span></h1>
 
-                                <div class="survey__wrapper">
+<!-- Верхняя панель -->
+<div class="top-bar">
+    <div class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Unione School</span>
+    </div>
+    <div id="progress" class="progress-display">
+        <i class="fas fa-tasks"></i> <span>Сделано: 0 / 20</span>
+    </div>
+    <div class="top-bar-buttons">
+        <button id="studentLoginBtn" class="top-btn student-btn">
+            <i class="fas fa-user-graduate"></i> Вход ученика
+        </button>
+        <button id="teacherLoginBtn" class="top-btn teacher-btn">
+            <i class="fas fa-chalkboard-teacher"></i> Вход учителя
+        </button>
+    </div>
+</div>
 
-                                        <!-- БИОЛОГИЯ 35 ВОПРОСОВ -->
+<!-- Главный контент -->
+<main>
+    <div class="container">
+        <div class="header-with-icon">
+            <i class="fas fa-question-circle"></i>
+            <h1 class="survey__title">Проверь свои знания по <span class="survey__title--span">биологии</span></h1>
+            <i class="fas fa-flask"></i>
+        </div>
 
-                                        <div class="question active">
-                                                <p>1. Какая часть клетки содержит ДНК?</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q1"
-                                                                value="wrong">Цитоплазма</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q1"
-                                                                value="correct">Ядро</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q1"
-                                                                value="wrong">Мембрана</label>
-                                                <button class="next-btn" onclick="nextQuestion(0)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
+        <div class="survey__wrapper" id="quizWrapper">
+            <!-- Контент будет вставлен через JS -->
+        </div>
+    </div>
+</main>
 
-                                        <div class="question">
-                                                <p>2. Какая наука изучает растения?</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q2"
-                                                                value="wrong">Зоология</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q2"
-                                                                value="correct">Ботаника</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q2"
-                                                                value="wrong">География</label>
-                                                <button class="next-btn" onclick="nextQuestion(1)"></button>Отправить
-                                                <div class="error"></div>
-                                        </div>
+<!-- Модальное окно для ученика -->
+<div id="studentModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeStudentModal">&times;</span>
+        <div class="modal-header student-header">
+            <i class="fas fa-user-graduate"></i>
+            <h2>Вход для ученика</h2>
+        </div>
+        <p class="modal-subtitle">Введите свои данные для начала тестирования</p>
+        
+        <div class="input-group">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" id="studentName" placeholder="Ваше имя и фамилия">
+        </div>
+        
+        <div class="input-group">
+            <i class="fas fa-id-card input-icon"></i>
+            <input type="text" id="studentClass" placeholder="Ваш класс (например: 9А)">
+        </div>
+        
+        <button id="studentLogin" class="login-btn student-login-btn">
+            <i class="fas fa-sign-in-alt"></i> Начать тестирование
+        </button>
+        
+        <div id="studentError" class="error-message"></div>
+        
+        <div class="rules-box">
+            <h4><i class="fas fa-clipboard-list"></i> Правила:</h4>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Тест можно пройти только 1 раз</li>
+                <li><i class="fas fa-check-circle"></i> Всего 20 вопросов</li>
+                <li><i class="fas fa-check-circle"></i> После ответа нельзя вернуться</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-                                        <div class="question">
-                                                <p>3. Какой орган качает кровь?</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q3"
-                                                                value="wrong">Печень</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q3"
-                                                                value="correct">Сердце</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q3"
-                                                                value="wrong">Желудок</label>
-                                                <button class="next-btn" onclick="nextQuestion(2)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
+<!-- Модальное окно для учителя -->
+<div id="teacherModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeTeacherModal">&times;</span>
+        <div class="modal-header teacher-header">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h2>Вход для учителя</h2>
+        </div>
+        
+        <div class="teacher-list">
+            <h4><i class="fas fa-users"></i> Учителя:</h4>
+            <div class="teacher-grid">
+                <div class="teacher-card" data-username="Иванова М.И." data-password="биология2024">
+                    <i class="fas fa-female"></i>
+                    <span>Иванова М.И.</span>
+                    <small>биология2024</small>
+                </div>
+                <div class="teacher-card" data-username="Петров А.В." data-password="химия123">
+                    <i class="fas fa-male"></i>
+                    <span>Петров А.В.</span>
+                    <small>химия123</small>
+                </div>
+                <div class="teacher-card" data-username="Сидорова Е.Н." data-password="физика456">
+                    <i class="fas fa-female"></i>
+                    <span>Сидорова Е.Н.</span>
+                    <small>физика456</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" id="teacherUser" placeholder="ФИО учителя">
+        </div>
+        
+        <div class="input-group">
+            <i class="fas fa-lock input-icon"></i>
+            <input type="password" id="teacherPass" placeholder="Пароль">
+        </div>
+        
+        <button id="teacherLogin" class="login-btn teacher-login-btn">
+            <i class="fas fa-sign-in-alt"></i> Войти
+        </button>
+        
+        <div id="teacherError" class="error-message"></div>
 
-                                        <div class="question">
-                                                <p>4. Где происходит фотосинтез?</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q4"
-                                                                value="wrong">В корнях</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q4"
-                                                                value="correct">В листьях</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q4"
-                                                                value="wrong">В плодах</label>
-                                                <button class="next-btn" onclick="nextQuestion(3)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
+        <div id="teacherPanel" style="display:none;">
+            <h3><i class="fas fa-chart-bar"></i> Результаты учеников</h3>
+            <div class="teacher-info" id="currentTeacher"></div>
+            <div class="stats-summary" id="statsSummary"></div>
+            <div class="table-container">
+                <table id="resultsContainer">
+                    <thead>
+                        <tr>
+                            <th>Ученик</th>
+                            <th>Класс</th>
+                            <th>Результат</th>
+                            <th>Баллы</th>
+                            <th>Время</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody"></tbody>
+                </table>
+            </div>
+            <button id="exportCSV" class="export-btn">
+                <i class="fas fa-file-csv"></i> Экспорт в CSV
+            </button>
+        </div>
+    </div>
+</div>
 
-                                        <div class="question">
-                                                <p>5. Сколько хромосом у человека?</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q5"
-                                                                value="wrong">23</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q5"
-                                                                value="correct">46</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q5"
-                                                                value="wrong">48</label>
-                                                <button class="next-btn" onclick="nextQuestion(4)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>6. Орган дыхания человека:</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q6"
-                                                                value="wrong">Почки</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q6"
-                                                                value="correct">Лёгкие</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q6"
-                                                                value="wrong">Печень</label>
-                                                <button class="next-btn" onclick="nextQuestion(5)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>7. Какая кровь богата кислородом?</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q7"
-                                                                value="wrong">Венозная</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q7"
-                                                                value="correct">Артериальная</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q7"
-                                                                value="wrong">Лимфа</label>
-                                                <button class="next-btn" onclick="nextQuestion(6)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>8. Какая наука изучает животных?</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q8"
-                                                                value="wrong">Ботаника</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q8"
-                                                                value="correct">Зоология</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q8"
-                                                                value="wrong">Химия</label>
-                                                <button class="next-btn" onclick="nextQuestion(7)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>9. Какая часть растения поглощает воду?</p>
-                                                <label class="label"><input class="survey__input" type="radio" name="q9"
-                                                                value="wrong">Лист</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q9"
-                                                                value="correct">Корень</label>
-                                                <label class="label"><input class="survey__input" type="radio" name="q9"
-                                                                value="wrong">Цветок</label>
-                                                <button class="next-btn" onclick="nextQuestion(8)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>10. Как называется процесс образования пищи у растений?</p>
-                                                <label class="label"><input class="survey__input" type="radio"
-                                                                name="q10" value="wrong">Дыхание</label>
-                                                <label class="label"><input class="survey__input" type="radio"
-                                                                name="q10" value="correct">Фотосинтез</label>
-                                                <label class="label"><input class="survey__input" type="radio"
-                                                                name="q10" value="wrong">Испарение</label>
-                                                <button class="next-btn" onclick="nextQuestion(9)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <!-- дальше тот же принцип -->
-
-                                        <div class="question">
-                                                <p>11. Какая жидкость переносит вещества по телу?</p>
-                                                <label><input type="radio" name="q11" value="wrong">Вода</label>
-                                                <label><input type="radio" name="q11" value="correct">Кровь</label>
-                                                <label><input type="radio" name="q11" value="wrong">Воздух</label>
-                                                <button class="next-btn" onclick="nextQuestion(10)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>12. Самая большая кость человека?</p>
-                                                <label><input type="radio" name="q12" value="correct">Бедренная</label>
-                                                <label><input type="radio" name="q12" value="wrong">Ребро</label>
-                                                <label><input type="radio" name="q12" value="wrong">Череп</label>
-                                                <button class="next-btn" onclick="nextQuestion(11)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>13. Какая часть глаза отвечает за цвет?</p>
-                                                <label><input type="radio" name="q13" value="wrong">Зрачок</label>
-                                                <label><input type="radio" name="q13" value="correct">Радужка</label>
-                                                <label><input type="radio" name="q13" value="wrong">Хрусталик</label>
-                                                <button class="next-btn" onclick="nextQuestion(12)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>14. Где переваривается пища?</p>
-                                                <label><input type="radio" name="q14" value="wrong">Лёгкие</label>
-                                                <label><input type="radio" name="q14" value="correct">Желудок</label>
-                                                <label><input type="radio" name="q14" value="wrong">Сердце</label>
-                                                <button class="next-btn" onclick="nextQuestion(13)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>15. Сколько камер в сердце?</p>
-                                                <label><input type="radio" name="q15" value="wrong">3</label>
-                                                <label><input type="radio" name="q15" value="correct">4</label>
-                                                <label><input type="radio" name="q15" value="wrong">5</label>
-                                                <button class="next-btn" onclick="nextQuestion(14)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>16. Какая система отвечает за движение?</p>
-                                                <label><input type="radio" name="q16" value="correct">Мышечная</label>
-                                                <label><input type="radio" name="q16" value="wrong">Дыхательная</label>
-                                                <label><input type="radio" name="q16"
-                                                                value="wrong">Пищеварительная</label>
-                                                <button class="next-btn" onclick="nextQuestion(15)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>17. Как называется наука о наследственности?</p>
-                                                <label><input type="radio" name="q17" value="wrong">Экология</label>
-                                                <label><input type="radio" name="q17" value="correct">Генетика</label>
-                                                <label><input type="radio" name="q17" value="wrong">Ботаника</label>
-                                                <button class="next-btn" onclick="nextQuestion(16)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>18. Где образуется кровь?</p>
-                                                <label><input type="radio" name="q18" value="correct">Костный
-                                                        мозг</label>
-                                                <label><input type="radio" name="q18" value="wrong">Сердце</label>
-                                                <label><input type="radio" name="q18" value="wrong">Желудок</label>
-                                                <button class="next-btn" onclick="nextQuestion(17)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>19. Какой газ нужен для дыхания?</p>
-                                                <label><input type="radio" name="q19" value="wrong">Углекислый
-                                                        газ</label>
-                                                <label><input type="radio" name="q19" value="correct">Кислород</label>
-                                                <label><input type="radio" name="q19" value="wrong">Азот</label>
-                                                <button class="next-btn" onclick="nextQuestion(18)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                        <div class="question">
-                                                <p>20. Самый большой орган человека?</p>
-                                                <label><input type="radio" name="q20" value="correct">Кожа</label>
-                                                <label><input type="radio" name="q20" value="wrong">Печень</label>
-                                                <label><input type="radio" name="q20" value="wrong">Сердце</label>
-                                                <button class="next-btn" onclick="nextQuestion(19)">Отправить</button>
-                                                <div class="error"></div>
-                                        </div>
-
-                                   
-
-                                      
-                                </div>
-                        </div>
-                </section>
-        </main>
-        <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
-
 </html>
