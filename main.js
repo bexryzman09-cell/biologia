@@ -29,7 +29,7 @@ let currentStudent = null;
 let testCompleted = false;
 
 const teachers = [
-    { username: "Иванова М.И.", password: "биология2024" },
+    { username: "Севинч.Руслановна", password: "биология" },
     { username: "Петров А.В.", password: "химия123" },
     { username: "Сидорова Е.Н.", password: "физика456" }
 ];
