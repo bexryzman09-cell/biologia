@@ -1,24 +1,24 @@
 const questionsData = [
-    {q:"Какая часть клетки содержит ДНК?", options:["Цитоплазма","Мембрана","Ядро"], answer:"Ядро"},
-    {q:"Какая наука изучает растения?", options:["Зоология","Ботаника","География"], answer:"Ботаника"},
-    {q:"Какой орган качает кровь?", options:["Печень","Сердце","Желудок"], answer:"Сердце"},
-    {q:"Где происходит фотосинтез?", options:["В корнях","В листьях","В плодах"], answer:"В листьях"},
-    {q:"Сколько хромосом у человека?", options:["23","46","48"], answer:"46"},
-    {q:"Орган дыхания человека:", options:["Почки","Лёгкие","Печень"], answer:"Лёгкие"},
-    {q:"Какая кровь богата кислородом?", options:["Венозная","Артериальная","Лимфа"], answer:"Артериальная"},
-    {q:"Какая наука изучает животных?", options:["Ботаника","Зоология","Химия"], answer:"Зоология"},
-    {q:"Какая часть растения поглощает воду?", options:["Лист","Цветок","Корень"], answer:"Корень"},
-    {q:"Процесс образования пищи у растений?", options:["Дыхание","Фотосинтез","Испарение"], answer:"Фотосинтез"},
-    {q:"Какая жидкость переносит вещества по телу?", options:["Вода","Кровь","Воздух"], answer:"Кровь"},
-    {q:"Самая большая кость человека?", options:["Бедренная","Ребро","Череп"], answer:"Бедренная"},
-    {q:"Какая часть глаза отвечает за цвет?", options:["Зрачок","Радужка","Хрусталик"], answer:"Радужка"},
-    {q:"Где переваривается пища?", options:["Лёгкие","Желудок","Сердце"], answer:"Желудок"},
-    {q:"Сколько камер в сердце?", options:["3","4","5"], answer:"4"},
-    {q:"Какая система отвечает за движение?", options:["Мышечная","Дыхательная","Пищеварительная"], answer:"Мышечная"},
-    {q:"Наука о наследственности?", options:["Экология","Генетика","Ботаника"], answer:"Генетика"},
-    {q:"Где образуется кровь?", options:["Сердце","Костный мозг","Желудок"], answer:"Костный мозг"},
-    {q:"Какой газ нужен для дыхания?", options:["Углекислый газ","Кислород","Азот"], answer:"Кислород"},
-    {q:"Самый большой орган человека?", options:["Печень","Сердце","Кожа"], answer:"Кожа"}
+    { q: "Какая часть клетки содержит ДНК?", options: ["Цитоплазма", "Мембрана", "Ядро"], answer: "Ядро" },
+    { q: "Какая наука изучает растения?", options: ["Зоология", "Ботаника", "География"], answer: "Ботаника" },
+    { q: "Какой орган качает кровь?", options: ["Печень", "Сердце", "Желудок"], answer: "Сердце" },
+    { q: "Где происходит фотосинтез?", options: ["В корнях", "В листьях", "В плодах"], answer: "В листьях" },
+    { q: "Сколько хромосом у человека?", options: ["23", "46", "48"], answer: "46" },
+    { q: "Орган дыхания человека:", options: ["Почки", "Лёгкие", "Печень"], answer: "Лёгкие" },
+    { q: "Какая кровь богата кислородом?", options: ["Венозная", "Артериальная", "Лимфа"], answer: "Артериальная" },
+    { q: "Какая наука изучает животных?", options: ["Ботаника", "Зоология", "Химия"], answer: "Зоология" },
+    { q: "Какая часть растения поглощает воду?", options: ["Лист", "Цветок", "Корень"], answer: "Корень" },
+    { q: "Процесс образования пищи у растений?", options: ["Дыхание", "Фотосинтез", "Испарение"], answer: "Фотосинтез" },
+    { q: "Какая жидкость переносит вещества по телу?", options: ["Вода", "Кровь", "Воздух"], answer: "Кровь" },
+    { q: "Самая большая кость человека?", options: ["Бедренная", "Ребро", "Череп"], answer: "Бедренная" },
+    { q: "Какая часть глаза отвечает за цвет?", options: ["Зрачок", "Радужка", "Хрусталик"], answer: "Радужка" },
+    { q: "Где переваривается пища?", options: ["Лёгкие", "Желудок", "Сердце"], answer: "Желудок" },
+    { q: "Сколько камер в сердце?", options: ["3", "4", "5"], answer: "4" },
+    { q: "Какая система отвечает за движение?", options: ["Мышечная", "Дыхательная", "Пищеварительная"], answer: "Мышечная" },
+    { q: "Наука о наследственности?", options: ["Экология", "Генетика", "Ботаника"], answer: "Генетика" },
+    { q: "Где образуется кровь?", options: ["Сердце", "Костный мозг", "Желудок"], answer: "Костный мозг" },
+    { q: "Какой газ нужен для дыхания?", options: ["Углекислый газ", "Кислород", "Азот"], answer: "Кислород" },
+    { q: "Самый большой орган человека?", options: ["Печень", "Сердце", "Кожа"], answer: "Кожа" }
 ];
 
 let shuffledQuestions = [];
@@ -44,7 +44,7 @@ function shuffleArray(arr) {
 
 document.addEventListener("DOMContentLoaded", () => {
     shuffledQuestions = shuffleArray([...questionsData]);
-    
+
     // Показываем приглашение войти
     showWelcomeScreen();
 
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("studentLogin").onclick = () => {
         const name = document.getElementById("studentName").value.trim();
         const studentClass = document.getElementById("studentClass").value.trim();
-        
+
         if (!name || !studentClass) {
             document.getElementById("studentError").innerHTML = "Заполните все поля!";
             return;
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentStudent = { name, class: studentClass };
         studentModal.style.display = "none";
         clearStudentInputs();
-        
+
         // Начинаем тест
         startTest();
     };
@@ -125,9 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("teacherLogin").onclick = () => {
         const username = document.getElementById("teacherUser").value.trim();
         const password = document.getElementById("teacherPass").value.trim();
-        
+
         const teacher = teachers.find(t => t.username === username && t.password === password);
-        
+
         if (!teacher) {
             document.getElementById("teacherError").innerHTML = "Неверные данные!";
             return;
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("teacherPanel").style.display = "block";
         document.getElementById("currentTeacher").innerHTML = `<i class="fas fa-user-check"></i> ${teacher.username}`;
-        
+
         // Показываем результаты
         showTeacherResults();
     };
@@ -146,17 +146,17 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Нет данных для экспорта");
             return;
         }
-        
+
         let csv = "Ученик,Класс,Вопрос,Ответ ученика,Правильный ответ,Результат,Время\n";
         studentResults.forEach(r => {
             csv += `"${r.student}","${r.class}","${r.question}","${r.selected}","${r.correct}","${r.isCorrect ? 'Правильно' : 'Неправильно'}","${r.timestamp}"\n`;
         });
-        
+
         const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8;' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `results_${new Date().toISOString().slice(0,10)}.csv`;
+        a.download = `results_${new Date().toISOString().slice(0, 10)}.csv`;
         a.click();
     };
 });
@@ -197,7 +197,7 @@ function renderQuestion() {
 
     const quizWrapper = document.getElementById("quizWrapper");
     const q = shuffledQuestions[currentIndex];
-    
+
     let html = `
         <div class="student-badge">
             <i class="fas fa-user-graduate"></i> ${currentStudent.name} (${currentStudent.class})
@@ -207,7 +207,7 @@ function renderQuestion() {
         </div>
         <p>${q.q}</p>
     `;
-    
+
     const shuffledOptions = shuffleArray([...q.options]);
     shuffledOptions.forEach(option => {
         html += `
@@ -216,21 +216,21 @@ function renderQuestion() {
             </label>
         `;
     });
-    
+
     html += `
         <button class="next-btn" onclick="nextQuestion()">
             <i class="fas fa-paper-plane"></i> Ответить
         </button>
         <div class="error" id="error"></div>
     `;
-    
+
     quizWrapper.innerHTML = html;
     document.getElementById("progress").innerHTML = `<i class="fas fa-tasks"></i> Сделано: ${currentIndex} / 20`;
 }
 
-window.nextQuestion = function() {
+window.nextQuestion = function () {
     const selected = document.querySelector('input[name="answer"]:checked');
-    
+
     if (!selected) {
         document.getElementById("error").innerHTML = "Выберите ответ!";
         return;
@@ -238,7 +238,7 @@ window.nextQuestion = function() {
 
     const q = shuffledQuestions[currentIndex];
     const isCorrect = selected.value === q.answer;
-    
+
     studentResults.push({
         student: currentStudent.name,
         class: currentStudent.class,
@@ -250,7 +250,7 @@ window.nextQuestion = function() {
     });
 
     if (isCorrect) score++;
-    
+
     currentIndex++;
 
     if (currentIndex < shuffledQuestions.length) {
@@ -263,7 +263,7 @@ window.nextQuestion = function() {
 
 function showResult() {
     const percentage = Math.round((score / 20) * 100);
-    
+
     document.getElementById("quizWrapper").innerHTML = `
         <div class="result-card">
             <div class="student-badge">
@@ -288,13 +288,13 @@ function showResult() {
             </div>
         </div>
     `;
-    
+
     document.getElementById("progress").innerHTML = `<i class="fas fa-check-circle"></i> Завершено: 20 / 20`;
 }
 
 function showTeacherResults() {
     const tbody = document.getElementById("resultsBody");
-    
+
     if (studentResults.length === 0) {
         tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 30px;">Нет результатов</td></tr>`;
         document.getElementById("statsSummary").innerHTML = "Нет данных для отображения";
@@ -340,7 +340,7 @@ function showTeacherResults() {
             </tr>
         `;
     });
-    
+
     tbody.innerHTML = html;
 
     // Общая статистика
@@ -368,7 +368,7 @@ async function saveToGoogleSheets(result) {
     formData.append('entry.321654987', result.correctAnswer);
     formData.append('entry.654987321', result.isCorrect ? 'Правильно' : 'Неправильно');
     formData.append('entry.147258369', new Date().toLocaleString());
-    
+
     try {
         await fetch(GOOGLE_FORM_URL, {
             method: 'POST',
@@ -379,3 +379,115 @@ async function saveToGoogleSheets(result) {
         console.error('Ошибка сохранения в Google Sheets:', error);
     }
 }
+// АНТИ-СПИСЫВАНИЕ ДЛЯ ПК И МОБИЛЬНЫХ
+
+// ПК: блокировка клавиш
+document.addEventListener('keydown', e => {
+    if (
+        e.key === "F12" || // F12
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || // Ctrl+Shift+I/J
+        (e.ctrlKey && e.key === "U") || // Ctrl+U
+        (e.ctrlKey && e.key === "C") || // Ctrl+C
+        (e.ctrlKey && e.key === "V") || // Ctrl+V
+        (e.ctrlKey && e.key === "X")    // Ctrl+X
+    ) {
+        e.preventDefault();
+        alert("Эти действия запрещены во время теста!");
+    }
+});
+
+// ПК: запрет правой кнопки мыши
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// ПК: запрет выделения текста
+document.addEventListener('selectstart', e => e.preventDefault());
+
+// Мобильные: блокировка долгого нажатия и выделения
+document.addEventListener('touchstart', e => {
+    if (e.touches.length > 1) e.preventDefault(); // запрет мультитача
+});
+document.addEventListener('touchmove', e => e.preventDefault()); // запрет перетаскивания для выделения
+document.addEventListener('gesturestart', e => e.preventDefault()); // запрет масштабирования
+document.addEventListener('touchend', e => e.preventDefault()); // запрет длинного удержания
+
+// // Мобильные и ПК: предупреждение при уходе с вкладки или сворачивании браузера
+// window.addEventListener('blur', () => {
+//     alert("Не переключайтесь на другие вкладки! Это будет засчитано как нарушение.");
+// });
+// window.addEventListener('visibilitychange', () => {
+//     if (document.visibilityState !== 'visible') {
+//         alert("Вы ушли с вкладки! Это нарушение правил теста.");
+//     }
+// });
+// АНТИ-СПИСЫВАНИЕ С АВТОМАТИЧЕСКИМ ЗАВЕРШЕНИЕМ ТЕСТА
+let cheatingDetected = false;
+
+function endTestForCheating() {
+    if (!currentStudent || testCompleted) return;
+    cheatingDetected = true;
+    testCompleted = true;
+
+    // Сохраняем результат как 0 баллов
+    studentResults.push({
+        student: currentStudent.name,
+        class: currentStudent.class,
+        question: "Нарушение правил",
+        selected: "—",
+        correct: "—",
+        isCorrect: false,
+        timestamp: new Date().toLocaleString()
+    });
+
+    // Показываем сообщение
+    document.getElementById("quizWrapper").innerHTML = `
+        <div class="result-card">
+            <div class="student-badge">
+                <i class="fas fa-user-graduate"></i> ${currentStudent.name} (${currentStudent.class})
+            </div>
+            <div class="result-icon">
+                <i class="fas fa-exclamation-triangle" style="color: #e53e3e;"></i>
+            </div>
+            <h2 style="color: #e53e3e; margin-bottom: 10px;">Тест завершён!</h2>
+            <p style="color: #718096; margin-bottom: 20px;">Вы покинули вкладку или свернули браузер. Баллы засчитаны как 0. Повторно пройти тест невозможно.</p>
+        </div>
+    `;
+
+    document.getElementById("progress").innerHTML = `<i class="fas fa-times-circle"></i> Завершено: 0 / 20`;
+}
+
+// Отслеживание ухода с вкладки или сворачивания браузера (ПК + мобильные)
+window.addEventListener('blur', () => endTestForCheating());
+window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') {
+        endTestForCheating();
+    }
+});
+// Сохраняем каждый результат
+localStorage.setItem('studentResults', JSON.stringify(studentResults));
+
+
+async function sendResult(result) {
+    try {
+        const resp = await fetch("/.netlify/functions/pushResults", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(result)
+        });
+
+        const data = await resp.json();
+        console.log("Результат отправлен:", data);
+    } catch (e) {
+        console.error("Ошибка отправки результата:", e);
+    }
+}
+
+// Пример использования после завершения теста
+const result = {
+    studentName: currentStudent.name,
+    studentClass: currentStudent.class,
+    score: score,
+    percentage: Math.round((score / 20) * 100),
+    timestamp: new Date().toISOString()
+};
+
+sendResult(result);
