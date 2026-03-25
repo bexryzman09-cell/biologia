@@ -1,0 +1,12 @@
+{
+  "name": "biologia",
+  "version": "1.0.0",
+  "description": "Проект с функциями Netlify",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
