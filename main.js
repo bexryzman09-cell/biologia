@@ -1,42 +1,34 @@
 // 1. ДАННЫЕ ВОПРОСОВ
 const questionsData = [
-    { q: "Кто был основателем государства Шейбанидов в Мавераннахре?", options: ["Шейбани-хан", "Абдулла-хан II", "Убайдулла-хан"], answer: "Шейбани-хан" },
-    { q: "В каком году Шейбани-хан окончательно захватил Самарканд?", options: ["1501 год", "1499 год", "1510 год"], answer: "1501 год" },
-    { q: "Какая династия правила в Бухаре после Шейбанидов с 1601 года?", options: ["Аштарханиды", "Мангыты", "Тимуриды"], answer: "Аштарханиды" },
-    { q: "Кто был самым могущественным правителем из династии Шейбанидов во второй половине XVI века?", options: ["Абдулла-хан II", "Бабур", "Кучкунджи-хан"], answer: "Абдулла-хан II" },
-    { q: "Какое медресе на площади Регистан было построено по приказу Ялангтуша Бахадура?", options: ["Шир-Дор", "Медресе Улугбека", "Мири Араб"], answer: "Шир-Дор" },
-    { q: "В каком году в Коканде к власти пришла династия Минг (образование ханства)?", options: ["1709 год", "1740 год", "1800 год"], answer: "1709 год" },
-    { q: "Кто был автором исторического труда «Шаджарат-и турк» (Родословная тюрков)?", options: ["Абулгази-хан", "Навои", "Мунис Хорезми"], answer: "Абулгази-хан" },
-    { q: "Какая династия правила в Бухарском эмирате с середины XVIII века до 1920 года?", options: ["Мангыты", "Кунграты", "Аштарханиды"], answer: "Мангыты" },
-    { q: "Как назывался верховный совет при правителе в ханствах?", options: ["Диван", "Кенгаш", "Шура"], answer: "Диван" },
-    { q: "Какой город был столицей Хивинского ханства?", options: ["Хива", "Ургенч", "Куня-Ургенч"], answer: "Хива" },
-    { q: "Кто был первым правителем Бухары, принявшим титул «эмир»?", options: ["Амир Шахмурад", "Мухаммад Рахим-хан", "Даниял-бий"], answer: "Амир Шахмурад" },
-    { q: "В каком веке было образовано Кокандское ханство?", options: ["XVIII век", "XVII век", "XIX век"], answer: "XVIII век" },
-    { q: "Какой титул носил правитель Кокандского ханства?", options: ["Хан", "Эмир", "Шах"], answer: "Хан" },
-    { q: "Как называлась должность главы духовенства в ханствах?", options: ["Шейх-уль-ислам", "Кушбеги", "Диванбеги"], answer: "Шейх-уль-ислам" },
-    { q: "Кто возглавлял борьбу против иранских войск Надир-шаха в XVIII века?", options: ["Мухаммад Рахим-бий", "Абулфейз-хан", "Алим-хан"], answer: "Мухаммад Рахим-бий" },
-    { q: "В какой период велось строительство ансамбля Ляби-Хауз в Бухаре?", options: ["XVI—XVII века", "XIV—XV века", "XVIII век"], answer: "XVI—XVII века" },
-    { q: "Как назывался поземельный налог, составлявший 1/5 или 1/10 часть урожая?", options: ["Харадж", "Закят", "Танап"], answer: "Харадж" },
-    { q: "При каком кокандском правителе территория ханства достигла наибольших размеров?", options: ["Алим-хан", "Мадали-хан", "Шерали-хан"], answer: "Мадали-хан" },
-    { q: "Какой город в XIX веке называли «Куполом ислама» в регионе?", options: ["Бухара", "Самарканд", "Хива"], answer: "Бухара" },
-    { q: "Какое племя основало правящую династию в Хивинском ханстве в XVIII веке?", options: ["Кунграт", "Минг", "Мангыт"], answer: "Кунграт" }
+    { q: "Кто был основателем огромной империи со столицей в Самарканд в XIV веке?", options: ["Амир Темур", "Мирзо Улугбек", "Бабур"], answer: "Амир Темур" },
+    { q: "Как называлось государство, которым правил Амир Темур?", options: ["Туран", "Хорезмшахи", "Золотая Орда"], answer: "Туран" },
+    { q: "Кто был последним хорезмшахом, прославившимся борьбой против Чингисхана?", options: ["Джалалиддин Мангуберди", "Мухаммад Хорезмшах", "Темур Малик"], answer: "Джалалиддин Мангуберди" },
+    { q: "В какой битве Амир Темур разгромил турецкого султана Баязида Йилдирима?", options: ["Анкарская битва", "Битва на реке Терек", "Битва в грязи"], answer: "Анкарская битва" },
+    { q: "Кто возглавлял оборону Худжанда от монголов?", options: ["Темур Малик", "Наджмиддин Кубро", "Махмуд Тараби"], answer: "Темур Малик" },
+    { q: "Какое знаменитое изречение было написано на перстне Амира Темура?", options: ["Сила в справедливости", "Победа или смерть", "Знание — это сила"], answer: "Сила в справедливости" },
+    { q: "Великий астроном и внук Амира Темура, построивший обсерваторию:", options: ["Мирзо Улугбек", "Шахрух", "Абу Саид"], answer: "Мирзо Улугбек" },
+    { q: "В каком году родился Амир Темур?", options: ["1336 год", "1342 год", "1405 год"], answer: "1336 год" },
+    { q: "Как назывался свод законов и правил Амира Темура?", options: ["Уложения Темура", "Авеста", "Законы Ясы"], answer: "Уложения Темура" },
+    { q: "В каком селе родился Амир Темур?", options: ["Ходжа Илгар", "Шахрисабз", "Пайкенд"], answer: "Ходжа Илгар" },
+    { q: "Против кого Джалалиддин сражался в битве при Катване?", options: ["Против монголов", "Против каракитаев", "Против арабов"], answer: "Против монголов" },
+    { q: "Кто из ученых погиб, защищая Гургандж от монголов?", options: ["Наджмиддин Кубро", "Аль-Бухари", "Ибн Сино"], answer: "Наджмиддин Кубро" },
+    { q: "Как называлась столица государства Хорезмшахов?", options: ["Гургандж", "Самарканд", "Бухара"], answer: "Гургандж" },
+    { q: "В каком году монголы под предводительством Чингисхана вторглись в Мавераннахр?", options: ["1219 год", "1221 год", "1370 год"], answer: "1219 год" },
+    { q: "Какой город Амир Темур сделал столицей империи?", options: ["Самарканд", "Кеш", "Ташкент"], answer: "Самарканд" },
+    { q: "Как звали отца Амира Темура?", options: ["Амир Тарагай", "Амир Казаган", "Амир Хусейн"], answer: "Амир Тарагай" },
+    { q: "В каком городе находится мавзолей Гур-Эмир?", options: ["Самарканд", "Шахрисабз", "Туркестан"], answer: "Самарканд" },
+    { q: "Кто из полководцев прыгнул в реку Инд на коне, спасаясь от Чингисхана?", options: ["Джалалиддин Мангуберди", "Темур Малик", "Спитамен"], answer: "Джалалиддин Мангуберди" },
+    { q: "Какое здание в Самарканде Темур построил в честь своей жены?", options: ["Мечеть Биби-Ханым", "Гур-Эмир", "Шахи-Зинда"], answer: "Мечеть Биби-Ханым" },
+    { q: "Сколько лет правил Амир Темур?", options: ["35 лет", "20 лет", "40 лет"], answer: "35 лет" }
 ];
 
-// 2. ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ
 let shuffledQuestions = [];
 let score = 0;
 let currentIndex = 0;
-let studentResults = [];
+let studentAnswersData = [];
 let currentStudent = null;
 let testCompleted = false;
 
-const teachers = [
-    { username: "Севинч.Руслановна", password: "биология" },
-    { username: "Петров А.В.", password: "химия123" },
-    { username: "Сидорова Е.Н.", password: "физика456" }
-];
-
-// Функция перемешивания
 function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -45,163 +37,144 @@ function shuffleArray(arr) {
     return arr;
 }
 
-// 3. ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ
+// Запуск при загрузке страницы
 document.addEventListener("DOMContentLoaded", () => {
     shuffledQuestions = shuffleArray([...questionsData]);
-    showWelcomeScreen();
+    
+    // Показываем приветствие
+    document.getElementById("quizWrapper").innerHTML = `
+        <div style="text-align:center; padding: 20px;">
+            <h2>История (5-6 класс)</h2>
+            <button class="next-btn" id="startBtn">Начать тестирование</button>
+        </div>
+    `;
 
-    // Кнопки входа
-    const studentLoginBtn = document.getElementById("studentLoginBtn");
-    if (studentLoginBtn) {
-        studentLoginBtn.onclick = () => {
-            if (testCompleted) return alert("Тест уже завершен.");
-            document.getElementById("studentModal").style.display = "block";
-        };
-    }
-
-    const teacherLoginBtn = document.getElementById("teacherLoginBtn");
-    if (teacherLoginBtn) {
-        teacherLoginBtn.onclick = () => {
-            document.getElementById("teacherModal").style.display = "block";
-        };
-    }
-
-    // Закрытие модалок
-    document.querySelectorAll(".close").forEach(closeBtn => {
-        closeBtn.onclick = () => {
-            document.getElementById("studentModal").style.display = "none";
-            document.getElementById("teacherModal").style.display = "none";
-        };
-    });
+    // Кнопка "Начать" открывает вход
+    document.getElementById("startBtn").onclick = () => {
+        document.getElementById("studentModal").style.display = "block";
+    };
 
     // Вход ученика
     document.getElementById("studentLogin").onclick = () => {
         const name = document.getElementById("studentName").value.trim();
-        const studentClass = document.getElementById("studentClass").value.trim();
-        if (!name || !studentClass) return alert("Заполните поля!");
-
-        currentStudent = { name, class: studentClass };
-        document.getElementById("studentModal").style.display = "none";
-        startTest();
-    };
-
-    // Вход учителя
-    document.getElementById("teacherLogin").onclick = () => {
-        const user = document.getElementById("teacherUser").value;
-        const pass = document.getElementById("teacherPass").value;
-        const teacher = teachers.find(t => t.username === user && t.password === pass);
-
-        if (teacher) {
-            document.getElementById("teacherPanel").style.display = "block";
-            document.getElementById("teacherModal").style.display = "none";
-            showTeacherResults();
+        const sClass = document.getElementById("studentClass").value.trim();
+        
+        if (name && sClass) {
+            currentStudent = { name, sClass };
+            document.getElementById("studentModal").style.display = "none";
+            startQuiz();
         } else {
-            alert("Ошибка входа!");
+            alert("Пожалуйста, заполни имя и класс!");
         }
     };
 });
 
-// 4. ЛОГИКА ТЕСТА
-function showWelcomeScreen() {
-    document.getElementById("quizWrapper").innerHTML = `
-        <div style="text-align:center; padding:20px;">
-            <h2>Готовы начать?</h2>
-            <button class="next-btn" onclick="document.getElementById('studentLoginBtn').click()">Войти и начать</button>
-        </div>
-    `;
-}
-
-function startTest() {
+function startQuiz() {
     currentIndex = 0;
     score = 0;
+    studentAnswersData = [];
+    testCompleted = false;
     renderQuestion();
 }
 
 function renderQuestion() {
     const q = shuffledQuestions[currentIndex];
     const quizWrapper = document.getElementById("quizWrapper");
-
-    let optionsHtml = shuffleArray([...q.options]).map(opt => `
-        <label class="label">
-            <input type="radio" name="answer" value="${opt}"> ${opt}
-        </label>
-    `).join('');
+    const options = shuffleArray([...q.options]);
 
     quizWrapper.innerHTML = `
-        <div class="student-badge">${currentStudent.name} (${currentStudent.class})</div>
-        <div class="question-number">Вопрос ${currentIndex + 1}/20</div>
-        <p><strong>${q.q}</strong></p>
-        ${optionsHtml}
-        <button class="next-btn" onclick="handleAnswer()">Ответить</button>
-        <div id="error" class="error"></div>
+        <div class="student-badge"><i class="fas fa-user"></i> ${currentStudent.name}</div>
+        <div class="question-number">Вопрос ${currentIndex + 1} из 20</div>
+        <p class="question-text"><strong>${q.q}</strong></p>
+        <div class="options-container">
+            ${options.map(opt => `
+                <label class="label">
+                    <input type="radio" name="quiz_opt" value="${opt}"> <span>${opt}</span>
+                </label>
+            `).join('')}
+        </div>
+        <button class="next-btn" id="submitBtn">Ответить</button>
+        <div id="errorMsg" style="color:red; margin-top:10px; font-weight:bold;"></div>
     `;
-    document.getElementById("progress").innerText = `Сделано: ${currentIndex}/20`;
+
+    document.getElementById("progress").innerText = `Прогресс: ${currentIndex + 1}/20`;
+
+    // Вешаем событие на кнопку ответа
+    document.getElementById("submitBtn").onclick = handleAnswerSubmit;
 }
 
-window.handleAnswer = function () {
-    const selected = document.querySelector('input[name="answer"]:checked');
+function handleAnswerSubmit() {
+    const selected = document.querySelector('input[name="quiz_opt"]:checked');
     if (!selected) {
-        document.getElementById("error").innerText = "Выберите ответ!";
+        document.getElementById("errorMsg").innerText = "Выберите один из вариантов!";
         return;
     }
 
     const q = shuffledQuestions[currentIndex];
     const isCorrect = selected.value === q.answer;
-    if (isCorrect) score++;
 
-    studentResults.push({
-        student: currentStudent.name,
-        class: currentStudent.class,
-        question: q.q,
-        isCorrect: isCorrect,
-        timestamp: new Date().toLocaleTimeString()
+    // Сохраняем историю для финала
+    studentAnswersData.push({
+        q: q.q,
+        yours: selected.value,
+        correct: q.answer,
+        isCorrect: isCorrect
     });
 
+    if (isCorrect) score++;
     currentIndex++;
+
     if (currentIndex < 20) {
         renderQuestion();
     } else {
-        finishTest();
+        showFinalResults();
     }
-};
-
-function finishTest() {
-    testCompleted = true;
-    const proc = Math.round((score / 20) * 100);
-    document.getElementById("quizWrapper").innerHTML = `
-        <div class="result-card">
-            <h2>Результат: ${score}/20</h2>
-            <p>Выполнено на ${proc}%</p>
-            <p>Тест завершен. Закройте вкладку.</p>
-        </div>
-    `;
-    document.getElementById("progress").innerText = "Тест окончен";
 }
 
-// 5. ЗАЩИТА (АНТИ-СПИСЫВАНИЕ)
-document.addEventListener('contextmenu', e => e.preventDefault());
-document.addEventListener('selectstart', e => e.preventDefault());
+function showFinalResults() {
+    testCompleted = true;
+    const percent = Math.round((score / 20) * 100);
+    
+    let tableRows = studentAnswersData.map(item => `
+        <tr style="background: ${item.isCorrect ? '#d4edda' : '#f8d7da'};">
+            <td style="border:1px solid #ccc; padding:8px;">${item.q}</td>
+            <td style="border:1px solid #ccc; padding:8px;">${item.yours}</td>
+            <td style="border:1px solid #ccc; padding:8px;">${item.correct}</td>
+        </tr>
+    `).join('');
 
-window.addEventListener('visibilitychange', () => {
+    document.getElementById("quizWrapper").innerHTML = `
+        <div class="result-card">
+            <h2>Результат: ${score} из 20 (${percent}%)</h2>
+            <p>Ниже показаны правильные ответы:</p>
+            <div style="max-height: 400px; overflow-y: auto; border: 1px solid #eee;">
+                <table style="width:100%; border-collapse: collapse; font-size:13px;">
+                    <thead style="position: sticky; top: 0; background: #eee;">
+                        <tr>
+                            <th style="border:1px solid #ccc; padding:8px;">Вопрос</th>
+                            <th style="border:1px solid #ccc; padding:8px;">Твой ответ</th>
+                            <th style="border:1px solid #ccc; padding:8px;">Правильный</th>
+                        </tr>
+                    </thead>
+                    <tbody>${tableRows}</tbody>
+                </table>
+            </div>
+            <button class="next-btn" style="margin-top:20px;" onclick="location.reload()">Вернуться в начало</button>
+        </div>
+    `;
+    document.getElementById("progress").innerText = "Тест завершен";
+}
+
+// Защита от сворачивания
+window.onvisibilitychange = () => {
     if (document.visibilityState === 'hidden' && currentStudent && !testCompleted) {
         testCompleted = true;
         document.getElementById("quizWrapper").innerHTML = `
-            <div class="result-card" style="border-top:5px solid red;">
-                <h2 style="color:red;">ТЕСТ АННУЛИРОВАН</h2>
-                <p>Вы покинули вкладку. Результат: 0 баллов.</p>
+            <div class="result-card" style="border: 2px solid red;">
+                <h2 style="color:red;">ТЕСТ ПРЕРВАН</h2>
+                <p>Вы покинули страницу теста. Результат аннулирован (0 баллов).</p>
+                <button onclick="location.reload()" class="next-btn">Попробовать снова</button>
             </div>
         `;
     }
-});
-
-function showTeacherResults() {
-    const tbody = document.getElementById("resultsBody");
-    tbody.innerHTML = studentResults.map(r => `
-        <tr>
-            <td>${r.student}</td>
-            <td>${r.class}</td>
-            <td>${r.isCorrect ? "1" : "0"}</td>
-            <td>${r.timestamp}</td>
-        </tr>
-    `).join('');
-}
+};
