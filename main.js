@@ -1,129 +1,28 @@
+// 1. ДАННЫЕ ВОПРОСОВ
 const questionsData = [
-    {
-        q: "Кто был основателем государства Шейбанидов в Мавераннахре?",
-        options: ["Шейбани-хан", "Абдулла-хан II", "Убайдулла-хан"],
-        answer: "Шейбани-хан"
-    },
-    {
-        q: "В каком году Шейбани-хан окончательно захватил Самарканд?",
-        options: ["1501 год", "1499 год", "1510 год"],
-        answer: "1501 год"
-    },
-    {
-        q: "Какая династия правила в Бухаре после Шейбанидов с 1601 года?",
-        options: ["Аштарханиды", "Мангыты", "Тимуриды"],
-        answer: "Аштарханиды"
-    },
-    {
-        q: "Кто был самым могущественным правителем из династии Шейбанидов во второй половине XVI века?",
-        options: ["Абдулла-хан II", "Бабур", "Кучкунджи-хан"],
-        answer: "Абдулла-хан II"
-    },
-    {
-        q: "Какое медресе на площади Регистан было построено по приказу Ялангтуша Бахадура?",
-        options: ["Шир-Дор", "Медресе Улугбека", "Мири Араб"],
-        answer: "Шир-Дор"
-    },
-    {
-        q: "В каком году в Коканде к власти пришла династия Минг (образование ханства)?",
-        options: ["1709 год", "1740 год", "1800 год"],
-        answer: "1709 год"
-    },
-    {
-        q: "Кто был автором исторического труда «Шаджарат-и турк» (Родословная тюрков)?",
-        options: ["Абулгази-хан", "Навои", "Мунис Хорезми"],
-        answer: "Абулгази-хан"
-    },
-    {
-        q: "Какая династия правила в Бухарском эмирате с середины XVIII века до 1920 года?",
-        options: ["Мангыты", "Кунграты", "Аштарханиды"],
-        answer: "Мангыты"
-    },
-    {
-        q: "Как назывался верховный совет при правителе в ханствах?",
-        options: ["Диван", "Кенгаш", "Шура"],
-        answer: "Диван"
-    },
-    {
-        q: "Какой город был столицей Хивинского ханства?",
-        options: ["Хива", "Ургенч", "Куня-Ургенч"],
-        answer: "Хива"
-    },
-    {
-        q: "Кто был первым правителем Бухары, принявшим титул «эмир»?",
-        options: ["Амир Шахмурад", "Мухаммад Рахим-хан", "Даниял-бий"],
-        answer: "Амир Шахмурад"
-    },
-    {
-        q: "В каком веке было образовано Кокандское ханство?",
-        options: ["XVIII век", "XVII век", "XIX век"],
-        answer: "XVIII век"
-    },
-    {
-        q: "Какой титул носил правитель Кокандского ханства?",
-        options: ["Хан", "Эмир", "Шах"],
-        answer: "Хан"
-    },
-    {
-        q: "Как называлась должность главы духовенства в ханствах?",
-        options: ["Шейх-уль-ислам", "Кушбеги", "Диванбеги"],
-        answer: "Шейх-уль-ислам"
-    },
-    {
-        q: "Кто возглавлял борьбу против иранских войск Надир-шаха в XVIII веке?",
-        options: ["Мухаммад Рахим-бий", "Абулфейз-хан", "Алим-хан"],
-        answer: "Мухаммад Рахим-бий"
-    },
-    {
-        q: "В какой период велось строительство ансамбля Ляби-Хауз в Бухаре?",
-        options: ["XVI—XVII века", "XIV—XV века", "XVIII век"],
-        answer: "XVI—XVII века"
-    },
-    {
-        q: "Как назывался поземельный налог, составлявший 1/5 или 1/10 часть урожая?",
-        options: ["Харадж", "Закят", "Танап"],
-        answer: "Харадж"
-    },
-    {
-        q: "При каком кокандском правителе территория ханства достигла наибольших размеров?",
-        options: ["Алим-хан", "Мадали-хан", "Шерали-хан"],
-        answer: "Мадали-хан"
-    },
-    {
-        q: "Какой город в XIX веке называли «Куполом ислама» в регионе?",
-        options: ["Бухара", "Самарканд", "Хива"],
-        answer: "Бухара"
-    },
-    {
-        q: "Какое племя основало правящую династию в Хивинском ханстве в XVIII веке?",
-        options: ["Кунграт", "Минг", "Мангыт"],
-        answer: "Кунграт"
-    }
+    { q: "Кто был основателем государства Шейбанидов в Мавераннахре?", options: ["Шейбани-хан", "Абдулла-хан II", "Убайдулла-хан"], answer: "Шейбани-хан" },
+    { q: "В каком году Шейбани-хан окончательно захватил Самарканд?", options: ["1501 год", "1499 год", "1510 год"], answer: "1501 год" },
+    { q: "Какая династия правила в Бухаре после Шейбанидов с 1601 года?", options: ["Аштарханиды", "Мангыты", "Тимуриды"], answer: "Аштарханиды" },
+    { q: "Кто был самым могущественным правителем из династии Шейбанидов во второй половине XVI века?", options: ["Абдулла-хан II", "Бабур", "Кучкунджи-хан"], answer: "Абдулла-хан II" },
+    { q: "Какое медресе на площади Регистан было построено по приказу Ялангтуша Бахадура?", options: ["Шир-Дор", "Медресе Улугбека", "Мири Араб"], answer: "Шир-Дор" },
+    { q: "В каком году в Коканде к власти пришла династия Минг (образование ханства)?", options: ["1709 год", "1740 год", "1800 год"], answer: "1709 год" },
+    { q: "Кто был автором исторического труда «Шаджарат-и турк» (Родословная тюрков)?", options: ["Абулгази-хан", "Навои", "Мунис Хорезми"], answer: "Абулгази-хан" },
+    { q: "Какая династия правила в Бухарском эмирате с середины XVIII века до 1920 года?", options: ["Мангыты", "Кунграты", "Аштарханиды"], answer: "Мангыты" },
+    { q: "Как назывался верховный совет при правителе в ханствах?", options: ["Диван", "Кенгаш", "Шура"], answer: "Диван" },
+    { q: "Какой город был столицей Хивинского ханства?", options: ["Хива", "Ургенч", "Куня-Ургенч"], answer: "Хива" },
+    { q: "Кто был первым правителем Бухары, принявшим титул «эмир»?", options: ["Амир Шахмурад", "Мухаммад Рахим-хан", "Даниял-бий"], answer: "Амир Шахмурад" },
+    { q: "В каком веке было образовано Кокандское ханство?", options: ["XVIII век", "XVII век", "XIX век"], answer: "XVIII век" },
+    { q: "Какой титул носил правитель Кокандского ханства?", options: ["Хан", "Эмир", "Шах"], answer: "Хан" },
+    { q: "Как называлась должность главы духовенства в ханствах?", options: ["Шейх-уль-ислам", "Кушбеги", "Диванбеги"], answer: "Шейх-уль-ислам" },
+    { q: "Кто возглавлял борьбу против иранских войск Надир-шаха в XVIII века?", options: ["Мухаммад Рахим-бий", "Абулфейз-хан", "Алим-хан"], answer: "Мухаммад Рахим-бий" },
+    { q: "В какой период велось строительство ансамбля Ляби-Хауз в Бухаре?", options: ["XVI—XVII века", "XIV—XV века", "XVIII век"], answer: "XVI—XVII века" },
+    { q: "Как назывался поземельный налог, составлявший 1/5 или 1/10 часть урожая?", options: ["Харадж", "Закят", "Танап"], answer: "Харадж" },
+    { q: "При каком кокандском правителе территория ханства достигла наибольших размеров?", options: ["Алим-хан", "Мадали-хан", "Шерали-хан"], answer: "Мадали-хан" },
+    { q: "Какой город в XIX веке называли «Куполом ислама» в регионе?", options: ["Бухара", "Самарканд", "Хива"], answer: "Бухара" },
+    { q: "Какое племя основало правящую династию в Хивинском ханстве в XVIII веке?", options: ["Кунграт", "Минг", "Мангыт"], answer: "Кунграт" }
 ];
-// const questionsData = [
-//     { q: "Какая единица измерения силы в системе СИ?", options: ["Ньютон", "Джоуль", "Ватт"], answer: "Ньютон" },
-//     { q: "Как обозначается масса в формулах?", options: ["m", "v", "F"], answer: "m" },
-//     { q: "Как обозначается ускорение?", options: ["a", "s", "t"], answer: "a" },
-//     { q: "Кто открыл закон всемирного тяготения?", options: ["Исаак Ньютон", "Галилео Галилей", "Альберт Эйнштейн"], answer: "Исаак Ньютон" },
-//     { q: "Что измеряет динамометр?", options: ["Силу", "Массу", "Объём"], answer: "Силу" },
-//     { q: "Какая формула второго закона Ньютона?", options: ["F = m·a", "v = s/t", "E = m·c²"], answer: "F = m·a" },
-//     { q: "Что измеряется в джоулях?", options: ["Энергия", "Сила", "Скорость"], answer: "Энергия" },
-//     { q: "Какая единица измерения мощности?", options: ["Ватт", "Ньютон", "Джоуль"], answer: "Ватт" },
-//     { q: "Какая частица несёт отрицательный заряд?", options: ["Электрон", "Протон", "Нейтрон"], answer: "Электрон" },
-//     { q: "Как называется сила, которая препятствует движению?", options: ["Сила трения", "Сила тяжести", "Магнитная сила"], answer: "Сила трения" },
-//     { q: "Что такое давление?", options: ["Сила на единицу площади", "Скорость движения", "Энергия тела"], answer: "Сила на единицу площади" },
-//     { q: "Какая формула давления?", options: ["p = F/S", "v = s/t", "F = m·a"], answer: "p = F/S" },
-//     { q: "Что измеряет амперметр?", options: ["Силу тока", "Напряжение", "Сопротивление"], answer: "Силу тока" },
-//     { q: "Что измеряет вольтметр?", options: ["Напряжение", "Силу тока", "Энергию"], answer: "Напряжение" },
-//     { q: "Что происходит с телом при увеличении силы тяжести?", options: ["Ускоряется вниз", "Замедляется", "Не меняется"], answer: "Ускоряется вниз" },
-//     { q: "Свет распространяется в вакууме со скоростью около…", options: ["3·10^8 м/с", "3·10^6 м/с", "3·10^10 м/с"], answer: "3·10^8 м/с" },
-//     { q: "Какая энергия есть у движущегося тела?", options: ["Кинетическая", "Потенциальная", "Тепловая"], answer: "Кинетическая" },
-//     { q: "Какая энергия есть у поднятого тела?", options: ["Потенциальная", "Кинетическая", "Электрическая"], answer: "Потенциальная" },
-//     { q: "Что измеряет термометр?", options: ["Температуру", "Массу", "Силу"], answer: "Температуру" },
-//     { q: "Какой закон связывает силу тока, напряжение и сопротивление?", options: ["Закон Ома", "Закон Ньютона", "Закон сохранения энергии"], answer: "Закон Ома" }
-// ];
 
-
+// 2. ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ
 let shuffledQuestions = [];
 let score = 0;
 let currentIndex = 0;
@@ -137,6 +36,7 @@ const teachers = [
     { username: "Сидорова Е.Н.", password: "физика456" }
 ];
 
+// Функция перемешивания
 function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -145,148 +45,70 @@ function shuffleArray(arr) {
     return arr;
 }
 
+// 3. ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ
 document.addEventListener("DOMContentLoaded", () => {
     shuffledQuestions = shuffleArray([...questionsData]);
-
-    // Показываем приглашение войти
     showWelcomeScreen();
 
-    // Модальные окна
-    const studentModal = document.getElementById("studentModal");
-    const teacherModal = document.getElementById("teacherModal");
+    // Кнопки входа
+    const studentLoginBtn = document.getElementById("studentLoginBtn");
+    if (studentLoginBtn) {
+        studentLoginBtn.onclick = () => {
+            if (testCompleted) return alert("Тест уже завершен.");
+            document.getElementById("studentModal").style.display = "block";
+        };
+    }
 
-    // Открытие модальных окон
-    document.getElementById("studentLoginBtn").onclick = () => {
-        if (!testCompleted) {
-            studentModal.style.display = "block";
-        } else {
-            alert("Вы уже прошли тест. Тест можно пройти только один раз!");
-        }
-    };
+    const teacherLoginBtn = document.getElementById("teacherLoginBtn");
+    if (teacherLoginBtn) {
+        teacherLoginBtn.onclick = () => {
+            document.getElementById("teacherModal").style.display = "block";
+        };
+    }
 
-    document.getElementById("teacherLoginBtn").onclick = () => {
-        teacherModal.style.display = "block";
-    };
-
-    // Закрытие модальных окон
-    document.getElementById("closeStudentModal").onclick = () => {
-        studentModal.style.display = "none";
-        clearStudentInputs();
-    };
-
-    document.getElementById("closeTeacherModal").onclick = () => {
-        teacherModal.style.display = "none";
-        clearTeacherInputs();
-    };
-
-    // Закрытие по клику вне окна
-    window.onclick = (event) => {
-        if (event.target == studentModal) {
-            studentModal.style.display = "none";
-            clearStudentInputs();
-        }
-        if (event.target == teacherModal) {
-            teacherModal.style.display = "none";
-            clearTeacherInputs();
-        }
-    };
-
-    // Автозаполнение для учителей
-    document.querySelectorAll('.teacher-card').forEach(card => {
-        card.addEventListener('click', () => {
-            document.getElementById('teacherUser').value = card.dataset.username;
-            document.getElementById('teacherPass').value = card.dataset.password;
-        });
+    // Закрытие модалок
+    document.querySelectorAll(".close").forEach(closeBtn => {
+        closeBtn.onclick = () => {
+            document.getElementById("studentModal").style.display = "none";
+            document.getElementById("teacherModal").style.display = "none";
+        };
     });
 
     // Вход ученика
     document.getElementById("studentLogin").onclick = () => {
         const name = document.getElementById("studentName").value.trim();
         const studentClass = document.getElementById("studentClass").value.trim();
-
-        if (!name || !studentClass) {
-            document.getElementById("studentError").innerHTML = "Заполните все поля!";
-            return;
-        }
-
-        // Проверяем, не проходил ли уже этот ученик тест
-        const existingStudent = studentResults.find(s => s.student === name && s.class === studentClass);
-        if (existingStudent) {
-            document.getElementById("studentError").innerHTML = "Вы уже проходили тест! Тест можно пройти только один раз.";
-            return;
-        }
+        if (!name || !studentClass) return alert("Заполните поля!");
 
         currentStudent = { name, class: studentClass };
-        studentModal.style.display = "none";
-        clearStudentInputs();
-
-        // Начинаем тест
+        document.getElementById("studentModal").style.display = "none";
         startTest();
     };
 
     // Вход учителя
     document.getElementById("teacherLogin").onclick = () => {
-        const username = document.getElementById("teacherUser").value.trim();
-        const password = document.getElementById("teacherPass").value.trim();
+        const user = document.getElementById("teacherUser").value;
+        const pass = document.getElementById("teacherPass").value;
+        const teacher = teachers.find(t => t.username === user && t.password === pass);
 
-        const teacher = teachers.find(t => t.username === username && t.password === password);
-
-        if (!teacher) {
-            document.getElementById("teacherError").innerHTML = "Неверные данные!";
-            return;
+        if (teacher) {
+            document.getElementById("teacherPanel").style.display = "block";
+            document.getElementById("teacherModal").style.display = "none";
+            showTeacherResults();
+        } else {
+            alert("Ошибка входа!");
         }
-
-        document.getElementById("teacherPanel").style.display = "block";
-        document.getElementById("currentTeacher").innerHTML = `<i class="fas fa-user-check"></i> ${teacher.username}`;
-
-        // Показываем результаты
-        showTeacherResults();
-    };
-
-    // Экспорт в CSV
-    document.getElementById("exportCSV").onclick = () => {
-        if (studentResults.length === 0) {
-            alert("Нет данных для экспорта");
-            return;
-        }
-
-        let csv = "Ученик,Класс,Вопрос,Ответ ученика,Правильный ответ,Результат,Время\n";
-        studentResults.forEach(r => {
-            csv += `"${r.student}","${r.class}","${r.question}","${r.selected}","${r.correct}","${r.isCorrect ? 'Правильно' : 'Неправильно'}","${r.timestamp}"\n`;
-        });
-
-        const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `results_${new Date().toISOString().slice(0, 10)}.csv`;
-        a.click();
     };
 });
 
+// 4. ЛОГИКА ТЕСТА
 function showWelcomeScreen() {
     document.getElementById("quizWrapper").innerHTML = `
-        <div class="welcome-screen" style="text-align: center; padding: 40px;">
-            <i class="fas fa-graduation-cap" style="font-size: 80px; color: #667eea; margin-bottom: 20px;"></i>
-            <h2 style="color: #2d3748; margin-bottom: 15px;">Добро пожаловать!</h2>
-            <p style="color: #718096; margin-bottom: 30px;">Для начала тестирования войдите как ученик</p>
-            <button onclick="document.getElementById('studentLoginBtn').click()" class="next-btn" style="margin: 0 auto;">
-                <i class="fas fa-sign-in-alt"></i> Войти как ученик
-            </button>
+        <div style="text-align:center; padding:20px;">
+            <h2>Готовы начать?</h2>
+            <button class="next-btn" onclick="document.getElementById('studentLoginBtn').click()">Войти и начать</button>
         </div>
     `;
-}
-
-function clearStudentInputs() {
-    document.getElementById("studentName").value = "";
-    document.getElementById("studentClass").value = "";
-    document.getElementById("studentError").innerHTML = "";
-}
-
-function clearTeacherInputs() {
-    document.getElementById("teacherUser").value = "";
-    document.getElementById("teacherPass").value = "";
-    document.getElementById("teacherError").innerHTML = "";
 }
 
 function startTest() {
@@ -296,302 +118,90 @@ function startTest() {
 }
 
 function renderQuestion() {
-    if (!currentStudent) return;
-
-    const quizWrapper = document.getElementById("quizWrapper");
     const q = shuffledQuestions[currentIndex];
+    const quizWrapper = document.getElementById("quizWrapper");
 
-    let html = `
-        <div class="student-badge">
-            <i class="fas fa-user-graduate"></i> ${currentStudent.name} (${currentStudent.class})
-        </div>
-        <div class="question-number">
-            <i class="fas fa-question-circle"></i> Вопрос ${currentIndex + 1}/20
-        </div>
-        <p>${q.q}</p>
+    let optionsHtml = shuffleArray([...q.options]).map(opt => `
+        <label class="label">
+            <input type="radio" name="answer" value="${opt}"> ${opt}
+        </label>
+    `).join('');
+
+    quizWrapper.innerHTML = `
+        <div class="student-badge">${currentStudent.name} (${currentStudent.class})</div>
+        <div class="question-number">Вопрос ${currentIndex + 1}/20</div>
+        <p><strong>${q.q}</strong></p>
+        ${optionsHtml}
+        <button class="next-btn" onclick="handleAnswer()">Ответить</button>
+        <div id="error" class="error"></div>
     `;
-
-    const shuffledOptions = shuffleArray([...q.options]);
-    shuffledOptions.forEach(option => {
-        html += `
-            <label class="label">
-                <input type="radio" name="answer" value="${option}"> ${option}
-            </label>
-        `;
-    });
-
-    html += `
-        <button class="next-btn" onclick="nextQuestion()">
-            <i class="fas fa-paper-plane"></i> Ответить
-        </button>
-        <div class="error" id="error"></div>
-    `;
-
-    quizWrapper.innerHTML = html;
-    document.getElementById("progress").innerHTML = `<i class="fas fa-tasks"></i> Сделано: ${currentIndex} / 20`;
+    document.getElementById("progress").innerText = `Сделано: ${currentIndex}/20`;
 }
 
-window.nextQuestion = function () {
+window.handleAnswer = function () {
     const selected = document.querySelector('input[name="answer"]:checked');
-
     if (!selected) {
-        document.getElementById("error").innerHTML = "Выберите ответ!";
+        document.getElementById("error").innerText = "Выберите ответ!";
         return;
     }
 
     const q = shuffledQuestions[currentIndex];
     const isCorrect = selected.value === q.answer;
+    if (isCorrect) score++;
 
     studentResults.push({
         student: currentStudent.name,
         class: currentStudent.class,
         question: q.q,
-        selected: selected.value,
-        correct: q.answer,
         isCorrect: isCorrect,
-        timestamp: new Date().toLocaleString()
+        timestamp: new Date().toLocaleTimeString()
     });
 
-    if (isCorrect) score++;
-
     currentIndex++;
-
-    if (currentIndex < shuffledQuestions.length) {
+    if (currentIndex < 20) {
         renderQuestion();
     } else {
-        showResult();
-        testCompleted = true;
+        finishTest();
     }
-}
+};
 
-function showResult() {
-    const percentage = Math.round((score / 20) * 100);
-
+function finishTest() {
+    testCompleted = true;
+    const proc = Math.round((score / 20) * 100);
     document.getElementById("quizWrapper").innerHTML = `
         <div class="result-card">
-            <div class="student-badge">
-                <i class="fas fa-user-graduate"></i> ${currentStudent.name} (${currentStudent.class})
-            </div>
-            <div class="result-icon">
-                <i class="fas fa-trophy"></i>
-            </div>
-            <h2 style="color: #2d3748; margin-bottom: 10px;">Тест завершён!</h2>
-            <p style="color: #718096; margin-bottom: 20px;">Спасибо за прохождение теста</p>
-            <div class="score-box">
-                <p>${score} / 20</p>
-                <p>${percentage}%</p>
-            </div>
-            <div style="background: #f7fafc; padding: 20px; border-radius: 15px; margin: 20px 0;">
-                <h3 style="color: #2d3748; margin-bottom: 10px;">Детали:</h3>
-                <p><i class="fas fa-check-circle" style="color: #48bb78;"></i> Правильных ответов: ${score}</p>
-                <p><i class="fas fa-times-circle" style="color: #e53e3e;"></i> Неправильных ответов: ${20 - score}</p>
-            </div>
-            <div style="color: #718096; font-size: 14px;">
-                <i class="fas fa-info-circle"></i> Тест пройден. Вы не можете пройти его снова.
-            </div>
+            <h2>Результат: ${score}/20</h2>
+            <p>Выполнено на ${proc}%</p>
+            <p>Тест завершен. Закройте вкладку.</p>
         </div>
     `;
-
-    document.getElementById("progress").innerHTML = `<i class="fas fa-check-circle"></i> Завершено: 20 / 20`;
+    document.getElementById("progress").innerText = "Тест окончен";
 }
+
+// 5. ЗАЩИТА (АНТИ-СПИСЫВАНИЕ)
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
+
+window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden' && currentStudent && !testCompleted) {
+        testCompleted = true;
+        document.getElementById("quizWrapper").innerHTML = `
+            <div class="result-card" style="border-top:5px solid red;">
+                <h2 style="color:red;">ТЕСТ АННУЛИРОВАН</h2>
+                <p>Вы покинули вкладку. Результат: 0 баллов.</p>
+            </div>
+        `;
+    }
+});
 
 function showTeacherResults() {
     const tbody = document.getElementById("resultsBody");
-
-    if (studentResults.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 30px;">Нет результатов</td></tr>`;
-        document.getElementById("statsSummary").innerHTML = "Нет данных для отображения";
-        return;
-    }
-
-    // Группируем по ученикам
-    const studentStats = {};
-    studentResults.forEach(r => {
-        const key = `${r.student}_${r.class}`;
-        if (!studentStats[key]) {
-            studentStats[key] = {
-                student: r.student,
-                class: r.class,
-                total: 0,
-                correct: 0,
-                time: r.timestamp
-            };
-        }
-        studentStats[key].total++;
-        if (r.isCorrect) studentStats[key].correct++;
-    });
-
-    let html = "";
-    Object.values(studentStats).forEach(stat => {
-        const percentage = Math.round((stat.correct / stat.total) * 100);
-        html += `
-            <tr>
-                <td><i class="fas fa-user-graduate" style="color: #667eea;"></i> ${stat.student}</td>
-                <td>${stat.class}</td>
-                <td style="color: ${percentage >= 70 ? '#48bb78' : percentage >= 40 ? '#ecc94b' : '#e53e3e'}; font-weight: 600;">
-                    ${stat.correct}/${stat.total}
-                </td>
-                <td>
-                    <div style="display: flex; align-items: center; gap: 5px;">
-                        <span>${percentage}%</span>
-                        <div style="width: 50px; height: 6px; background: #edf2f7; border-radius: 3px;">
-                            <div style="width: ${percentage}%; height: 100%; background: ${percentage >= 70 ? '#48bb78' : percentage >= 40 ? '#ecc94b' : '#e53e3e'}; border-radius: 3px;"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>${stat.time}</td>
-            </tr>
-        `;
-    });
-
-    tbody.innerHTML = html;
-
-    // Общая статистика
-    const totalStudents = Object.keys(studentStats).length;
-    const totalCorrect = studentResults.filter(r => r.isCorrect).length;
-    const totalQuestions = studentResults.length;
-    const averageScore = totalStudents > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
-
-    document.getElementById("statsSummary").innerHTML = `
-        <i class="fas fa-chart-line"></i> 
-        <strong>Всего учеников:</strong> ${totalStudents} | 
-        <strong>Всего ответов:</strong> ${totalQuestions} | 
-        <strong>Средний результат:</strong> ${averageScore}%
-    `;
+    tbody.innerHTML = studentResults.map(r => `
+        <tr>
+            <td>${r.student}</td>
+            <td>${r.class}</td>
+            <td>${r.isCorrect ? "1" : "0"}</td>
+            <td>${r.timestamp}</td>
+        </tr>
+    `).join('');
 }
-// Сохранение в Google Sheets через Form Submit
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
-
-async function saveToGoogleSheets(result) {
-    const formData = new FormData();
-    formData.append('entry.123456789', result.studentName); // Замените на свои ID полей
-    formData.append('entry.987654321', result.studentClass);
-    formData.append('entry.456789123', result.question);
-    formData.append('entry.789123456', result.selectedAnswer);
-    formData.append('entry.321654987', result.correctAnswer);
-    formData.append('entry.654987321', result.isCorrect ? 'Правильно' : 'Неправильно');
-    formData.append('entry.147258369', new Date().toLocaleString());
-
-    try {
-        await fetch(GOOGLE_FORM_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: formData
-        });
-    } catch (error) {
-        console.error('Ошибка сохранения в Google Sheets:', error);
-    }
-}
-// АНТИ-СПИСЫВАНИЕ ДЛЯ ПК И МОБИЛЬНЫХ
-
-// ПК: блокировка клавиш
-document.addEventListener('keydown', e => {
-    if (
-        e.key === "F12" || // F12
-        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || // Ctrl+Shift+I/J
-        (e.ctrlKey && e.key === "U") || // Ctrl+U
-        (e.ctrlKey && e.key === "C") || // Ctrl+C
-        (e.ctrlKey && e.key === "V") || // Ctrl+V
-        (e.ctrlKey && e.key === "X")    // Ctrl+X
-    ) {
-        e.preventDefault();
-        alert("Эти действия запрещены во время теста!");
-    }
-});
-
-// ПК: запрет правой кнопки мыши
-document.addEventListener('contextmenu', e => e.preventDefault());
-
-// ПК: запрет выделения текста
-document.addEventListener('selectstart', e => e.preventDefault());
-
-// Мобильные: блокировка долгого нажатия и выделения
-document.addEventListener('touchstart', e => {
-    if (e.touches.length > 1) e.preventDefault(); // запрет мультитача
-});
-document.addEventListener('touchmove', e => e.preventDefault()); // запрет перетаскивания для выделения
-document.addEventListener('gesturestart', e => e.preventDefault()); // запрет масштабирования
-document.addEventListener('touchend', e => e.preventDefault()); // запрет длинного удержания
-
-// // Мобильные и ПК: предупреждение при уходе с вкладки или сворачивании браузера
-// window.addEventListener('blur', () => {
-//     alert("Не переключайтесь на другие вкладки! Это будет засчитано как нарушение.");
-// });
-// window.addEventListener('visibilitychange', () => {
-//     if (document.visibilityState !== 'visible') {
-//         alert("Вы ушли с вкладки! Это нарушение правил теста.");
-//     }
-// });
-// АНТИ-СПИСЫВАНИЕ С АВТОМАТИЧЕСКИМ ЗАВЕРШЕНИЕМ ТЕСТА
-let cheatingDetected = false;
-
-function endTestForCheating() {
-    if (!currentStudent || testCompleted) return;
-    cheatingDetected = true;
-    testCompleted = true;
-
-    // Сохраняем результат как 0 баллов
-    studentResults.push({
-        student: currentStudent.name,
-        class: currentStudent.class,
-        question: "Нарушение правил",
-        selected: "—",
-        correct: "—",
-        isCorrect: false,
-        timestamp: new Date().toLocaleString()
-    });
-
-    // Показываем сообщение
-    document.getElementById("quizWrapper").innerHTML = `
-        <div class="result-card">
-            <div class="student-badge">
-                <i class="fas fa-user-graduate"></i> ${currentStudent.name} (${currentStudent.class})
-            </div>
-            <div class="result-icon">
-                <i class="fas fa-exclamation-triangle" style="color: #e53e3e;"></i>
-            </div>
-            <h2 style="color: #e53e3e; margin-bottom: 10px;">Тест завершён!</h2>
-            <p style="color: #718096; margin-bottom: 20px;">Вы покинули вкладку или свернули браузер. Баллы засчитаны как 0. Повторно пройти тест невозможно.</p>
-        </div>
-    `;
-
-    document.getElementById("progress").innerHTML = `<i class="fas fa-times-circle"></i> Завершено: 0 / 20`;
-}
-
-// Отслеживание ухода с вкладки или сворачивания браузера (ПК + мобильные)
-window.addEventListener('blur', () => endTestForCheating());
-window.addEventListener('visibilitychange', () => {
-    if (document.visibilityState !== 'visible') {
-        endTestForCheating();
-    }
-});
-// Сохраняем каждый результат
-localStorage.setItem('studentResults', JSON.stringify(studentResults));
-
-
-async function sendResult(result) {
-    try {
-        const resp = await fetch("/.netlify/functions/pushResults", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(result)
-        });
-
-        const data = await resp.json();
-        console.log("Результат отправлен:", data);
-    } catch (e) {
-        console.error("Ошибка отправки результата:", e);
-    }
-}
-
-// Пример использования после завершения теста
-const result = {
-    studentName: currentStudent.name,
-    studentClass: currentStudent.class,
-    score: score,
-    percentage: Math.round((score / 20) * 100),
-    timestamp: new Date().toISOString()
-};
-
-sendResult(result);
-
