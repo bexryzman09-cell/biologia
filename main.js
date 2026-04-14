@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Показываем приветствие
     document.getElementById("quizWrapper").innerHTML = `
         <div style="text-align:center; padding: 20px;">
-            <h2>Физика </h2>
+            <h2>Unione</h2>
             <button class="next-btn" id="startBtn">Начать тестирование</button>
         </div>
     `;
